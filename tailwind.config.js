@@ -4,10 +4,10 @@ const { fontFamily } = require('tailwindcss/defaultTheme')
 module.exports = {
 	darkMode: ['class'],
 	content: [
-		'.src/**/*.tsx',
-		'.src/components/**/*.{ts,tsx}',
-		'.src/routes/**/*.tsx',
-		'index.html',
+		'./src/**/*.tsx',
+		'./src/components/**/*.{ts,tsx}',
+		'./src/routes/**/*.tsx',
+		'./index.html',
 	],
 	theme: {
 		container: {
