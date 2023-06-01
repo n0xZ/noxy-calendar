@@ -10,21 +10,27 @@
   },
   "dependencies": {
     "@clerk/clerk-react": "^4.17.0",
+    "@radix-ui/react-slot": "^1.0.2",
     "autoprefixer": "^10.4.14",
     "class-variance-authority": "^0.6.0",
     "clsx": "^1.2.1",
     "convex": "^0.15.1",
+    "date-fns": "^2.30.0",
     "lucide-react": "^0.233.0",
     "postcss": "^8.4.24",
-    "preact": "^10.13.2",
+    "react": "^18.2.0",
+    "react-day-picker": "^8.7.1",
+    "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.2",
     "tailwind-merge": "^1.12.0",
     "tailwindcss": "^3.3.2",
     "tailwindcss-animate": "^1.0.5"
   },
   "devDependencies": {
-    "@preact/preset-vite": "^2.5.0",
     "@types/node": "^20.2.5",
+    "@types/react": "^18.2.8",
+    "@types/react-dom": "^18.2.4",
+    "@vitejs/plugin-react-swc": "^3.3.1",
     "typescript": "^5.0.2",
     "vite": "^4.3.9"
   }

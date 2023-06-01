@@ -1,9 +1,10 @@
 import { defineConfig } from 'vite'
-import preact from '@preact/preset-vite'
+
+import React from '@vitejs/plugin-react-swc'
 import { resolve } from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
-	plugins: [preact()],
+	plugins: [React()],
 	resolve: {
 		alias: {
 			'@': resolve(__dirname, 'src'),
