@@ -4,9 +4,10 @@ const { fontFamily } = require('tailwindcss/defaultTheme')
 module.exports = {
 	darkMode: ['class'],
 	content: [
-		'src/**/*.tsx',
-		'src/components/**/*.{ts,tsx}',
-		'src/routes/**/*.tsx',
+		'.src/**/*.tsx',
+		'.src/components/**/*.{ts,tsx}',
+		'.src/routes/**/*.tsx',
+		'index.html',
 	],
 	theme: {
 		container: {
@@ -59,6 +60,7 @@ module.exports = {
 			},
 			fontFamily: {
 				sans: ['var(--font-sans)', ...fontFamily.sans],
+				rubik: 'Rubik',
 			},
 			keyframes: {
 				'accordion-down': {
