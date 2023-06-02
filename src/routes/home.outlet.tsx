@@ -1,4 +1,4 @@
-import { NavLink, Navigate } from 'react-router-dom'
+import { NavLink, Navigate, Outlet } from 'react-router-dom'
 import { SignedIn, SignedOut, UserButton, useUser } from '@clerk/clerk-react'
 
 export function HomeOutlet() {
@@ -20,6 +20,7 @@ export function HomeOutlet() {
 					</ul>
 				</nav>
 			</header>
+			<Outlet />
 		</>
 	)
 }
