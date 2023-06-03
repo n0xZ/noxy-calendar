@@ -17,6 +17,7 @@
 		"paths": {
 			"@/*": ["src/*"]
 		},
+		"types": ["./auto-imports.d.ts"],
 		/* Linting */
 		"strict": true,
 		"noUnusedLocals": true,

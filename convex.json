@@ -1,5 +1,11 @@
 {
   "project": "noxy-calendar",
   "team": "n0xz",
-  "prodUrl": "https://cared-toad-247.convex.cloud"
+  "prodUrl": "https://cared-toad-247.convex.cloud",
+  "authInfo": [
+    {
+      "domain": "https://natural-dragon-84.clerk.accounts.dev/",
+      "applicationID": "convex"
+    }
+  ]
 }
