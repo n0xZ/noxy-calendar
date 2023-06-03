@@ -23,6 +23,7 @@ specifiers:
   tailwindcss-animate: ^1.0.5
   typescript: ^5.0.2
   vite: ^4.3.9
+  zod: ^3.21.4
 
 dependencies:
   '@clerk/clerk-react': 4.17.0_react@18.2.0
@@ -41,6 +42,7 @@ dependencies:
   tailwind-merge: 1.12.0
   tailwindcss: 3.3.2
   tailwindcss-animate: 1.0.5_tailwindcss@3.3.2
+  zod: 3.21.4
 
 devDependencies:
   '@types/node': 20.2.5
@@ -1589,4 +1591,8 @@ packages:
   /yaml/2.3.1:
     resolution: {integrity: sha512-2eHWfjaoXgTBC2jNM1LRef62VQa0umtvRiDSk6HSzW7RvS5YtkabJrwYLLEKWBc8a5U2PTSCs+dJjUTJdlHsWQ==}
     engines: {node: '>= 14'}
+    dev: false
+
+  /zod/3.21.4:
+    resolution: {integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==}
     dev: false
