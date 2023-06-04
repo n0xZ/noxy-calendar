@@ -48,6 +48,13 @@ export function App() {
 					},
 				},
 				{
+					path: 'reminder/edit/:id',
+					lazy: async () => {
+						const { EditReminder } = await import('./routes/home/reminder/edit')
+						return { Component: EditReminder }
+					},
+				},
+				{
 					path: 'reminder/create',
 					lazy: async () => {
 						const { CreateReminder } = await import('./routes/home/reminder/create')
