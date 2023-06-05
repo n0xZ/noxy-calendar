@@ -24,6 +24,7 @@ import {
 import { Calendar } from '@/components/ui/calendar'
 import { cn } from '@/lib/utils'
 import { useMutation } from '../../../../convex/_generated/react'
+import { Textarea } from '@/components/ui/textarea'
 
 const createReminderSchema = z.object({
 	title: z.string({ required_error: 'El título es requerido' }),
@@ -102,8 +103,7 @@ export function CreateReminder() {
 							<FormItem>
 								<FormLabel>Descripción del recordatorio</FormLabel>
 								<FormControl>
-									<Input
-										type="text"
+									<Textarea
 										placeholder="La reunión de todos los días (o eso creo)"
 										disabled={status === 'loading'}
 										{...field}

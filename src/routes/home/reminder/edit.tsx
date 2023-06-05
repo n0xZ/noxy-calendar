@@ -25,6 +25,7 @@ import { formatConvexDate } from '@/utils/formatConvexDate'
 import { useMutation, useQuery } from '../../../../convex/_generated/react'
 import { Id } from '../../../../convex/_generated/dataModel'
 import { Reminder } from '@/components/reminders/list'
+import { Textarea } from '@/components/ui/textarea'
 
 const editReminderSchema = z.object({
 	title: z.string({ required_error: 'El título es requerido' }),
@@ -57,16 +58,15 @@ export function EditReminder() {
 				(expiringDate.getMonth() + 1) +
 				'-' +
 				expiringDate.getDate()
-			const result = await mutation({
+			await mutation({
 				title,
 				description,
 				expiringDate: parsedExpiringDate,
 				relatedDoc: reminder._id,
 			})
-			if (result) {
-				setStatus('stale')
-				navigate('/home/')
-			}
+
+			navigate('/home/')
+
 			setStatus('stale')
 		}
 	)
@@ -116,8 +116,7 @@ export function EditReminder() {
 								<FormItem>
 									<FormLabel>Descripción del recordatorio</FormLabel>
 									<FormControl>
-										<Input
-											type="text"
+										<Textarea
 											placeholder="La reunión de todos los días (o eso creo)"
 											disabled={status === 'loading'}
 											{...field}
