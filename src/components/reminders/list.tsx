@@ -1,13 +1,13 @@
-import { Doc } from '../../../convex/_generated/dataModel'
+import { Doc, Id } from '../../../convex/_generated/dataModel'
 import { ReminderItem } from './item'
 
 export type Reminder = {
-	_id: {
-		id: string
-	}
+	_id: Id<'reminders'>
+	reminderId: string
 	title: string
 	description: string
 	createdAt: Date
+	status: 'ACTIVE' | 'FINISHED'
 	expiringDate: Date
 	userId: string
 }
@@ -17,10 +17,10 @@ type Props = {
 
 export function ReminderList(props: Props) {
 	return (
-		<section className="grid w-full h-full gap-4">
+		<article className="grid w-full h-full grid-rows-2 gap-4">
 			{props.reminders.map((r: Reminder) => (
 				<ReminderItem reminder={r} key={r._id.id} />
 			))}
-		</section>
+		</article>
 	)
 }
