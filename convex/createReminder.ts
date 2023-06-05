@@ -5,24 +5,32 @@ export default mutation(
 		{ db },
 		{
 			description,
-
+			userId,
 			title,
 			expiringDate,
-			userId,
+			reminderId,
 		}: {
 			title: string
 			description: string
-			expiringDate: Date
+			expiringDate: string
 			userId: string
+			reminderId: string
 		}
 	) => {
-		const actualDay = Date.now().toString()
+		const actualDay = new Date()
+		const parsedActualDay =
+			actualDay.getFullYear() +
+			'-' +
+			(actualDay.getMonth() + 1) +
+			'-' +
+			actualDay.getDate()
 		const createdReminder = await db.insert('reminders', {
 			userId,
 			title,
 			description,
-			expiringDate: expiringDate.toISOString(),
-			createdAt: actualDay,
+			reminderId,
+			expiringDate,
+			createdAt: parsedActualDay,
 		})
 		return createdReminder
 	}
