@@ -30,6 +30,7 @@ export default mutation(
 			description,
 			reminderId,
 			expiringDate,
+			status: 'ACTIVE',
 			createdAt: parsedActualDay,
 		})
 		return createdReminder
