@@ -11,14 +11,13 @@ export default mutation(
 		}: {
 			title?: string
 			description?: string
-			expiringDate?: Date
-			id: string
+			expiringDate?: string
 			relatedDoc: Id<'reminders'>
 		}
 	) => {
 		const updatedReminder = await db.patch(relatedDoc, {
 			title,
-			expiringDate: expiringDate?.toISOString(),
+			expiringDate: expiringDate,
 			description,
 		})
 		return updatedReminder
