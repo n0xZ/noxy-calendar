@@ -5,5 +5,8 @@ export default query(async ({ db }, { userId }: { userId: string }) => {
 		.query('reminders')
 		.withSearchIndex('search_by_userId', (q) => q.search('userId', userId))
 		.collect()
-	return remindersByUserId
+	const filteredRemindersByActiveStatus = remindersByUserId.filter(
+		(reminder) => reminder.status === 'ACTIVE'
+	)
+	return filteredRemindersByActiveStatus
 })
