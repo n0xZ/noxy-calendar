@@ -8,6 +8,7 @@ export default defineSchema({
 		description: v.string(),
 		expiringDate: v.string(),
 		title: v.string(),
+		status: v.union(v.literal('ACTIVE'), v.literal('FINISHED')),
 		userId: v.string(),
 	})
 		.searchIndex('search_by_userId', {
