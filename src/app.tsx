@@ -34,31 +34,40 @@ export function App() {
 				{
 					path: '',
 					lazy: async () => {
-						const { HomeGeneral } = await import('./routes/home/general')
+						const { HomeGeneral, ErrorBoundary } = await import(
+							'./routes/home/general'
+						)
 						return {
 							Component: HomeGeneral,
+							ErrorBoundary,
 						}
 					},
 				},
 				{
 					path: 'reminder/:id',
 					lazy: async () => {
-						const { ReminderById } = await import('./routes/home/reminder/$id')
-						return { Component: ReminderById }
+						const { ReminderById, ErrorBoundary } = await import(
+							'./routes/home/reminder/$id'
+						)
+						return { Component: ReminderById, ErrorBoundary }
 					},
 				},
 				{
 					path: 'reminder/edit/:id',
 					lazy: async () => {
-						const { EditReminder } = await import('./routes/home/reminder/edit')
-						return { Component: EditReminder }
+						const { EditReminder, ErrorBoundary } = await import(
+							'./routes/home/reminder/edit'
+						)
+						return { Component: EditReminder, ErrorBoundary }
 					},
 				},
 				{
 					path: 'reminder/create',
 					lazy: async () => {
-						const { CreateReminder } = await import('./routes/home/reminder/create')
-						return { Component: CreateReminder }
+						const { CreateReminder, ErrorBoundary } = await import(
+							'./routes/home/reminder/create'
+						)
+						return { Component: CreateReminder, ErrorBoundary }
 					},
 				},
 			],
