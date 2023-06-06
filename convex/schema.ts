@@ -18,5 +18,9 @@ export default defineSchema({
 		.searchIndex('search_by_id', {
 			searchField: 'reminderId',
 			filterFields: ['reminderId'],
+		})
+		.searchIndex('search_by_activeStatus', {
+			searchField: 'status',
+			filterFields: ['status'],
 		}),
 })
