@@ -1,3 +1,4 @@
+import { Button } from '@/components/ui/button'
 import {
 	Menubar,
 	MenubarContent,
@@ -8,7 +9,7 @@ import {
 import { UserButton, useUser } from '@clerk/clerk-react'
 
 import { Authenticated, Unauthenticated, AuthLoading } from 'convex/react'
-import { ChevronUp, CalendarPlus } from 'lucide-react'
+import { CalendarPlus } from 'lucide-react'
 
 function Avatar() {
 	return <div className="w-8 h-8 bg-gray-500 rounded-full animate-pulse"></div>
@@ -19,8 +20,7 @@ function HomeMenubar() {
 		<Menubar className="space-x-6 bg-transparent border-0">
 			<MenubarMenu>
 				<MenubarTrigger className="flex flex-row items-center gap-1 ">
-					<ChevronUp />
-					<span>Recordatorio</span>
+					<Button variant={'default'} className='duration-150 hover:opacity-60'>Recordatorio</Button>
 				</MenubarTrigger>
 				<MenubarContent>
 					<MenubarItem>
