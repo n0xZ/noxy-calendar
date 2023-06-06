@@ -91,7 +91,10 @@ export function CreateReminder() {
 										disabled={status === 'loading'}
 									/>
 								</FormControl>
-								<FormDescription>This is your public display name.</FormDescription>
+								<FormDescription>
+									Este será el título de tu recordatorio. Tip: Que sea lo más redundante
+									posible.
+								</FormDescription>
 								<FormMessage />
 							</FormItem>
 						)}
@@ -110,7 +113,8 @@ export function CreateReminder() {
 									/>
 								</FormControl>
 								<FormDescription>
-									Una breve descripción de lo que trata el recordatorio.
+									La descripción de lo que tratará el recordatorio. Incluso podés pegar
+									Markdown en el mísmo!
 								</FormDescription>
 								<FormMessage />
 							</FormItem>
@@ -121,7 +125,7 @@ export function CreateReminder() {
 						name="expiringDate"
 						render={({ field }) => (
 							<FormItem className="flex flex-col ">
-								<FormLabel>Fecha límite del recordatorio</FormLabel>
+								<FormLabel>Fecha del evento del recordatorio</FormLabel>
 								<Popover>
 									<PopoverTrigger asChild>
 										<FormControl>
@@ -136,7 +140,7 @@ export function CreateReminder() {
 												{field.value ? (
 													format(field.value, 'PPP')
 												) : (
-													<span>Pick a date</span>
+													<span>Elegí una fecha</span>
 												)}
 												<CalendarIcon className="w-4 h-4 ml-auto opacity-50" />
 											</Button>
@@ -155,7 +159,7 @@ export function CreateReminder() {
 									</PopoverContent>
 								</Popover>
 								<FormDescription>
-									Your date of birth is used to calculate your age.
+									Esta será la fecha que se acontecerá el evento mencionado.
 								</FormDescription>
 								<FormMessage />
 							</FormItem>
