@@ -20,12 +20,11 @@ import {
 	PopoverTrigger,
 } from '@/components/ui/popover'
 import { Calendar } from '@/components/ui/calendar'
+import { Reminder } from '@/components/reminders/list'
+import { Textarea } from '@/components/ui/textarea'
 import { cn } from '@/lib/utils'
 import { formatConvexDate } from '@/utils/formatConvexDate'
 import { useMutation, useQuery } from '../../../../convex/_generated/react'
-import { Id } from '../../../../convex/_generated/dataModel'
-import { Reminder } from '@/components/reminders/list'
-import { Textarea } from '@/components/ui/textarea'
 
 const editReminderSchema = z.object({
 	title: z.string({ required_error: 'El título es requerido' }),
@@ -134,7 +133,7 @@ export function EditReminder() {
 							name="expiringDate"
 							render={({ field }) => (
 								<FormItem className="flex flex-col ">
-									<FormLabel>Fecha límite del recordatorio</FormLabel>
+									<FormLabel>Fecha del evento relacionado al recordatorio</FormLabel>
 									<Popover>
 										<PopoverTrigger asChild>
 											<FormControl>
@@ -169,9 +168,7 @@ export function EditReminder() {
 											/>
 										</PopoverContent>
 									</Popover>
-									<FormDescription>
-										Your date of birth is used to calculate your age.
-									</FormDescription>
+									<FormDescription>Esta será la fecha .</FormDescription>
 									<FormMessage />
 								</FormItem>
 							)}

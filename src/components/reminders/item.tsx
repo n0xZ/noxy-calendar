@@ -24,7 +24,7 @@ import { Id } from '../../../convex/_generated/dataModel'
 type Props = {
 	reminder: Reminder
 }
-type MutationStatus = 'stale' | 'loading'
+
 function DeleteReminder(props: { docId: Id<'reminders'> }) {
 	const mutation = useMutation('deleteReminder')
 
@@ -67,7 +67,7 @@ export function ReminderItem(props: Props) {
 		if (remainingTime >= 0 || remainingTime <= 3) return 'text-red-500'
 	}
 	return (
-		<Card className="w-full h-44">
+		<Card className="w-full h-48">
 			<CardHeader>
 				<CardTitle className="flex flex-row items-center justify-between">
 					<span>{props.reminder.title}</span>{' '}
@@ -75,7 +75,7 @@ export function ReminderItem(props: Props) {
 						{remainingTime} {remainingTime > 1 ? 'días restantes' : 'día restante'}
 					</span>
 				</CardTitle>
-				<CardDescription>{props.reminder.description}</CardDescription>
+				<CardDescription className='max-w-xl line-clamp-3'>{props.reminder.description}</CardDescription>
 			</CardHeader>
 			<CardContent className="grid gap-5">
 				<aside className="flex items-center justify-end space-x-4">
