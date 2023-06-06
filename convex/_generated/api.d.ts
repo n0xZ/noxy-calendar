@@ -11,11 +11,13 @@
 
 import type { ApiFromModules } from "convex/api";
 import type * as createReminder from "../createReminder";
+import type * as crons from "../crons";
 import type * as deleteReminder from "../deleteReminder";
 import type * as getReminderById from "../getReminderById";
 import type * as getReminders from "../getReminders";
 import type * as getRemindersByUserId from "../getRemindersByUserId";
 import type * as updateReminder from "../updateReminder";
+import type * as updateRemindersStatus from "../updateRemindersStatus";
 
 /**
  * A type describing your app's public Convex API.
@@ -28,9 +30,11 @@ import type * as updateReminder from "../updateReminder";
  */
 export type API = ApiFromModules<{
   createReminder: typeof createReminder;
+  crons: typeof crons;
   deleteReminder: typeof deleteReminder;
   getReminderById: typeof getReminderById;
   getReminders: typeof getReminders;
   getRemindersByUserId: typeof getRemindersByUserId;
   updateReminder: typeof updateReminder;
+  updateRemindersStatus: typeof updateRemindersStatus;
 }>;
