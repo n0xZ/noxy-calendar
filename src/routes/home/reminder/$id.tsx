@@ -1,3 +1,4 @@
+import { marked } from 'marked'
 import { Reminder } from '@/components/reminders/list'
 import { useQuery } from '../../../../convex/_generated/react'
 
@@ -20,7 +21,7 @@ function ReminderInformation(props: { reminder: Reminder }) {
 			>
 				{props.reminder.expiringDate.toString()}
 			</time>
-			<p className='mt-3 opacity-80'>{props.reminder.description}</p>
+			<div dangerouslySetInnerHTML={{ __html: props.reminder.description }}></div>
 		</>
 	)
 }
@@ -30,9 +31,11 @@ export function ReminderById() {
 		reminderId: params.id!,
 	})
 	return (
-		<section className="flex flex-col justify-center h-full">
+		<section className="flex flex-col justify-center w-full h-full max-w-4xl prose">
 			{reminder ? (
-				<ReminderInformation reminder={reminder} />
+				<ReminderInformation
+					reminder={{ ...reminder, description: marked.parse(reminder.description) }}
+				/>
 			) : (
 				<ReminderSkeleton />
 			)}

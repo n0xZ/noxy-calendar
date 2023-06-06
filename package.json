@@ -23,6 +23,7 @@
     "convex": "^0.15.1",
     "date-fns": "^2.30.0",
     "lucide-react": "^0.233.0",
+    "marked": "^5.0.4",
     "postcss": "^8.4.24",
     "react": "^18.2.0",
     "react-day-picker": "^8.7.1",
@@ -38,6 +39,8 @@
     "zod": "^3.21.4"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.9",
+    "@types/marked": "^5.0.0",
     "@types/node": "^20.2.5",
     "@types/react": "^18.2.8",
     "@types/react-dom": "^18.2.4",
